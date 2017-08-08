@@ -2,19 +2,19 @@
 # huawei service stage website :  https://servicestage.hwclouds.com/
 # How to use(Linux):
 # 1. Uncomment the variables and set their values
-# 2. execute: bash publish_images_to_huaweicloud.sh
+# 2. Execute: bash publish_images_to_huaweicloud.sh
 
 # config example
-# TARGET_VERSION=0.0.1                                                    ---------huawei cloud images repository target version.
-# ORIGIN_VERSION=0.0.1-SNAPSHOT                                           ---------local images version.
-# TENANT_NAME=xxxxxxxxxxx                                                 ---------huawei cloud tenant name.
-# REPO_ADDRESS=registry.cn-north-1.hwclouds.com                           ---------huawei cloud images repository address.
-# USER_NAME=xxxxx                                                         ---------user name: login huawei cloud images repository.
-# PW=xxxxxxx                                                              ---------paasword: login huawei cloud images repository.
-# WORKER_NAME=worker                                                      ---------worker name ,created by huawei cloud.
-# BEEKEEPER_NAME=beekeeper                                                ---------beekeeper name ,created by huawei cloud.
-# DOORMAN_NAME=doorman                                                    ---------doorman name ,created by huawei cloud.
-# MANAGER_NAME=manager                                                    ---------manager name ,created by huawei cloud.
+# TARGET_VERSION=0.0.1                                                  # ---------huawei cloud images repository target version.
+# ORIGIN_VERSION=0.0.1-SNAPSHOT                                         # ---------local images version.
+# TENANT_NAME=xxxxxxxxxxx                                               # ---------huawei cloud tenant name.
+# REPO_ADDRESS=registry.cn-north-1.hwclouds.com                         # ---------huawei cloud images repository address.
+# USER_NAME=xxxxx                                                       # ---------username: login huawei cloud images repository.
+# PW=xxxxxxx                                                            # ---------paasword: login huawei cloud images repository.
+WORKER_NAME=worker                                                      # ---------worker name, created by maven docker plugin.
+BEEKEEPER_NAME=beekeeper                                                # ---------beekeeper name, created by maven docker plugin.
+DOORMAN_NAME=doorman                                                    # ---------doorman name, created by maven docker plugin.
+MANAGER_NAME=manager                                                    # ---------manager name, created by maven docker plugin.
 
 
 which docker
