@@ -58,9 +58,6 @@ done
 echo "Generating new docker images"
 mvn clean package -DskipTests -DskipITs -Phuaweicloud -Pdocker
 
-docker pull openzipkin/zipkin
-docker tag openzipkin/zipkin ${REPO_ADDRESS}/${TENANT_NAME}/zipkin:$TARGET_VERSION
-
 echo "Tagging image versions"
 for module in ${modules[@]}; do
     docker tag $module:$ORIGIN_VERSION ${REPO_ADDRESS}/${TENANT_NAME}/workshop-$module:$TARGET_VERSION
@@ -72,6 +69,5 @@ echo "Pushing images to huawei docker repository"
 for module in ${modules[@]}; do
     docker push ${REPO_ADDRESS}/${TENANT_NAME}/workshop-$module:$TARGET_VERSION
 done
-docker push ${REPO_ADDRESS}/${TENANT_NAME}/zipkin:$TARGET_VERSION
 
 echo "Done"

@@ -8,6 +8,8 @@
   ```bash
   sudo apt-get purge docker-ce
   sudo mv /var/lib/docker /var/lib/docker-old
+  sudo rm /etc/apparmor.d/docker
+  sudo service apparmor restart
   ```
 2. Download and extract docker archive files
   ```bash
