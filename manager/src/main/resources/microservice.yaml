@@ -9,18 +9,41 @@ cse:
     registry:
       address: http://sc.servicecomb.io:30100
   isolation:
+    validate:
+      maxConcurrentRequests: 30000
+      timeoutInMilliseconds: 30000
     doorman:
+      maxConcurrentRequests: 30000
       timeoutInMilliseconds: 30000
     beekeeper:
+      maxConcurrentRequests: 30000
       timeoutInMilliseconds: 30000
     worker:
+      maxConcurrentRequests: 30000
       timeoutInMilliseconds: 30000
+  command:
+    default:
+      execution:
+        isolation:
+          strategy: THREAD
+          thread:
+            maxConcurrentRequests: 30000
+            timeoutInMilliseconds: 30000
+    validate:
+      execution:
+        isolation:
+          strategy: THREAD
+          thread:
+            maxConcurrentRequests: 30000
+            timeoutInMilliseconds: 30000
   handler:
     chain:
-      Provider:
-        default: tracing-provider
+#      Provider:
+#        default: tracing-provider
+#      Consumer:
+#        default: tracing-consumer,loadbalance
       Consumer:
-        default: tracing-consumer,loadbalance
+        default: loadbalance
 
 servicecomb:
   tracing:

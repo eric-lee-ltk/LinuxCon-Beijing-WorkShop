@@ -13,9 +13,13 @@ cse:
   handler:
     chain:
       Consumer:
-        default: tracing-consumer,bizkeeper-consumer,loadbalance
+        default: bizkeeper-consumer,loadbalance
       Provider:
-        default: tracing-provider,bizkeeper-provider
+        default: bizkeeper-provider
+#      Consumer:
+#        default: tracing-consumer,bizkeeper-consumer,loadbalance
+#      Provider:
+#        default: tracing-provider,bizkeeper-provider
 
 servicecomb:
   tracing:
